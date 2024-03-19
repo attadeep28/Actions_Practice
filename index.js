@@ -1,5 +1,5 @@
-const { jsonToExcel } = require("./JSON_To_CSV/Excel");
-
+const { jsonToExcel } = require("./Attadeep/JSON_To_CSV");
+const { ReadDataFromExcel } = require("./Attadeep/Read_Data_from_Excel");
 data = [
   {
     id: 2,
@@ -32,6 +32,9 @@ const options = {
   fileName: "outputS",
   worksheetName: "Sheet1",
   columnWidth: 20,
-  fileFormat: "csv",
+  fileFormat: "xlsx",
 };
-jsonToExcel(data, options);
+// jsonToExcel(data, options);
+ReadDataFromExcel("/home/attadeep.j/Major_Project/Attadeep/outputS.xlsx").then(
+  (res) => console.log(res)
+);
